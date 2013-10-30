@@ -31,6 +31,13 @@ int main()
 	cout << "Please enter the desired file name (without '.html')" << endl;
 	cin >> fileName;
 
+	if(fileName.length() < 1)
+	{
+		while(fileName.length() < 1)
+			cout << "Please enter a fileName with at least one character" << endl;
+			cin >> fileName;
+	}
+
 	fileName.append(".html");	//Adds html file extension
 
 	ofstream outFile;
@@ -63,8 +70,32 @@ int main()
 			return 1;
 		break;
 		default :
-			cout << "That is an invalid input. Input 4 or 5 ('q' to stop)" << endl;
 		break;
+	}
+
+	while(!((markup == '4') || (markup == '5') || (markup == 'q')))
+	{
+		cout << "That is an invalid input. Input 4 or 5 ('q' to stop)" << endl;
+		cin >> markup;
+
+		switch(markup)
+		{
+			case '4' :
+				makeHtml4(outFile);
+				cout << "Html4 created" << endl;
+			break;
+			case '5' :
+				makeHtml5(outFile);
+				cout << "Html5 created" << endl;
+			break;
+			case 'q' :
+				cout << "Quitting...." << endl << endl;
+				cout << "*< exited successfully >*" << endl;
+				return 1;
+			break;
+			default :
+			break;
+		}
 	}
 
 	printVersion(outFile);
