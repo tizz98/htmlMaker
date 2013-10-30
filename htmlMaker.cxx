@@ -31,13 +31,6 @@ int main()
 	cout << "Please enter the desired file name (without '.html')" << endl;
 	cin >> fileName;
 
-	if(fileName.length() < 1)
-	{
-		while(fileName.length() < 1)
-			cout << "Please enter a fileName with at least one character" << endl;
-			cin >> fileName;
-	}
-
 	fileName.append(".html");	//Adds html file extension
 
 	ofstream outFile;
