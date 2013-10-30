@@ -18,7 +18,7 @@ void makeHtml5(ofstream& outFile);						//Creates html5 doctype
 void printVersion(ofstream& outFile);					//Prints date & time when file is created
 void getTitle(string& title);							//Gets what the user wants the title to be
 void printHead(ofstream& outFile, string title);		//Prints the head portion of the page
-void printBody(ofstream& outFile);						//Prints the rest of the webpage
+void printBody(ofstream& outFile, string title);		//Prints the rest of the webpage
 void outputHeader();									//Outputs header to the screen
 
 int main()
@@ -70,7 +70,7 @@ int main()
 	printVersion(outFile);
 	getTitle(title);
 	printHead(outFile, title);
-	printBody(outFile);
+	printBody(outFile, title);
 
 	outFile.close();
 
@@ -122,13 +122,13 @@ void printHead(ofstream& outFile, string title)
 	outFile << "\t<title>" << title << "</title>" << endl;
 	outFile << "</head>" << endl;
 }
-void printBody(ofstream& outFile)
+void printBody(ofstream& outFile, string title)
 {
 	cout << "Generating body...." << endl;
 
 	outFile << "<body>" << endl;
 	outFile << "\t<!-- Main body goes here -->" << endl;
-	outFile << "\t<h1>Hello World!</h1>" << endl;
+	outFile << "\t<h1>" << title << "</h1>" << endl;
 	outFile << "\t<p> Welcome to my webpage!<p>" << endl;
 	outFile << "</body>" << endl;
 	outFile << "</html>" << endl;
