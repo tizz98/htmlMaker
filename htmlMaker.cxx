@@ -27,7 +27,7 @@ int main()
 
 	outputHeader();
 
-	cout << "Please enter the desired file name (without '.html')" << endl;
+	cout << "Please enter the desired file name (without '.html'): ";
 	cin >> fileName;
 
 	fileName.append(".html");	//Adds html file extension
@@ -45,16 +45,18 @@ int main()
 	cout << "Your file is named: " << fileName << endl;
 
 	cout << endl;
-	cout << "Would you like html 4 or 5 markup? (4 or 5; 'q' to quit)" << endl;
+	cout << "Would you like html 4 or 5 markup? (4 or 5; 'q' to quit): ";
 	cin >> markup;
 
 	switch(markup)
 	{
 		case '4' :
 			makeHtml4(outFile);
+			cout << "Html4 created" << endl;
 		break;
 		case '5' :
 			makeHtml5(outFile);
+			cout << "Html5 created" << endl;
 		break;
 		case 'q' :
 			cout << "Quitting...." << endl << endl;
@@ -67,7 +69,7 @@ int main()
 
 	while(!((markup == '4') || (markup == '5') || (markup == 'q')))
 	{
-		cout << "That is an invalid input. Input 4 or 5 ('q' to stop)" << endl;
+		cout << "That is an invalid input. Input 4 or 5 ('q' to stop): ";
 		cin >> markup;
 
 		switch(markup)
@@ -129,7 +131,7 @@ void printVersion(ofstream& outFile)
 void getTitle(string& title)
 {
 	cout << endl;
-	cout << "What would you like the title of your webpage to be?" << endl;
+	cout << "What would you like the title of your webpage to be? ";
 
 	cin.ignore(256, '\n');
 	getline(cin, title);
