@@ -16,4 +16,4 @@ And you're done!
 
 [My Soundcloud](https://soundcloud.com/daetam)
 
-My Website (coming soon!)
+[My Website](http://elijahwilson.me)
